@@ -1,7 +1,7 @@
 # KELI Scoreboard driver
 
 Welcome to my simple KELI scoreboard driver implementation. This driver supports some general characters, 
-ukrainian and english alphabets. I used this with KELI DPM-DZ-INT-3, by probably it should work with other series
+ukrainian and english alphabets. I used this with KELI DPM-DZ-INT-3, but probably it should work with other series
 
 ## Installation 
 ```sh
