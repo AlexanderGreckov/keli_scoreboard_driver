@@ -1,6 +1,5 @@
 [build-system]
 requires = [
-    "pyserial>=3.5",
     "setuptools>=42",
     "wheel"
 ]

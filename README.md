@@ -1,20 +1,20 @@
 # KELI Scoreboard driver
 
-Welcome to my simple KELI scoreboard driver implemtation. This driver supports some general characters, 
+Welcome to my simple KELI scoreboard driver implementation. This driver supports some general characters, 
 ukrainian and english alphabets.
 
 ## Installation 
 ```sh
-pip install keli_scoreboard_driver
+pip install keli-scoreboard
 ```
 
 ## Usage
 
 ```python
-from keli_scoreboard import KELIScoreboard
+from keli_scoreboard import KeliScoreboard
 
 # Initialize driver instance
-driver = KELIScoreboard('/dev/ttyUSB0')
+driver = KeliScoreboard('/dev/ttyUSB0')
 
 # Print out your custom information or weight
 driver.print_text('hello, world!')
@@ -26,7 +26,7 @@ for weight in range(1, 1000):
 driver.close()
 
 # Or you can use context manager
-with KELIScoreboard('/dev/ttyUSB0') as scoreboard:
+with KeliScoreboard('/dev/ttyUSB0') as scoreboard:
     scoreboard.print_text('Some information')
 ```
 

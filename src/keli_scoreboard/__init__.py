@@ -1,17 +1,16 @@
-import serial
-from serial import SerialException
+from serial import Serial, SerialException
 
 from src.keli_scoreboard.protocol import get_text_frame, get_settings_bytes
 
 
-class KELIScoreboard:
+class KeliScoreboard:
     """
     Basic scoreboard interactor class. If this provides too
     low functionality and customization you can implement your own
     like this.
     """
     def __init__(self, device: str, bitrate=4800):
-        self._port = serial.Serial(device, bitrate)
+        self._port = Serial(device, bitrate)
 
     def print_text(self, text: str) -> None:
         """ Upload a text command into scoreboard """
@@ -24,7 +23,7 @@ class KELIScoreboard:
         """
         self._port.write((str(weight).zfill(7)[::-1] + '=').encode('ascii'))
 
-    def __enter__(self) -> 'KELIScoreboard':
+    def __enter__(self) -> 'KeliScoreboard':
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> None:
@@ -35,4 +34,4 @@ class KELIScoreboard:
         self._port.close()
 
 
-__all__ = ('KELIScoreboard', 'SerialException')
+__all__ = ('KeliScoreboard', 'SerialException')

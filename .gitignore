@@ -1,6 +1,6 @@
 src/*.egg-info
 dist/
-builld/
+build/
 venv/
 .idea/
 __pycache__/
