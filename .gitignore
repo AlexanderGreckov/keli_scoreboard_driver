@@ -2,3 +2,5 @@ src/*.egg-info
 dist/
 builld/
 venv/
+.idea/
+__pycache__/

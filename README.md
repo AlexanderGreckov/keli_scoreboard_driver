@@ -8,6 +8,33 @@ ukrainian and english alphabets.
 pip install keli_scoreboard_driver
 ```
 
+## Usage
+
+```python
+from keli_scoreboard import KELIScoreboard
+
+# Initialize driver instance
+driver = KELIScoreboard('/dev/ttyUSB0')
+
+# Print out your custom information or weight
+driver.print_text('hello, world!')
+
+for weight in range(1, 1000):
+    driver.print_weigt(weight)
+
+# Release resources acquired by port usage
+driver.close()
+
+# Or you can use context manager
+with KELIScoreboard('/dev/ttyUSB0') as scoreboard:
+    scoreboard.print_text('Some information')
+```
+
+## Error handling
+When you're instantiating object or calling any function you can receive SerialPort exception (keli_scoreboard.SerialException).
+
+If you try to use unsupported character, you'll receive KeyError Exception (print_text method)
+
 ## Features
 
 This driver implements a particular set of characters (general special symbols, ukrainial letter and latin).
@@ -148,30 +175,3 @@ Supported characters:
     'Ю'
     'Я'
 ```
-
-## Usage
-
-```python
-from keli_scoreboard import KELIScoreboard
-
-# Initialize driver instance
-driver = KELIScoreboard('/dev/ttyUSB0')
-
-# Print out your custom information or weight
-driver.print_text('hello, world!')
-
-for weight in range(1, 1000):
-    driver.print_weigt(weight)
-
-# Release resources acquired by port usage
-driver.close()
-
-# Or you can use context manager
-with KELIScoreboard('/dev/ttyUSB0') as scoreboard:
-    scoreboard.print_text('Some information')
-```
-
-## Error handling
-When you're instantiating object or calling any function you can receive SerialPort exception (keli_scoreboard.SerialException).
-
-If you try to use unsupported character, you'll receive KeyError Exception (print_text method)
