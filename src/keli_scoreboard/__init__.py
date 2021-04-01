@@ -1,6 +1,6 @@
 from serial import Serial, SerialException
 
-from src.keli_scoreboard.protocol import get_text_frame, get_settings_bytes
+from .protocol import get_text_frame, get_settings_bytes
 
 
 class KeliScoreboard:
