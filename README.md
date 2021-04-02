@@ -20,7 +20,7 @@ driver = KeliScoreboard('/dev/ttyUSB0')
 driver.print_text('hello, world!')
 
 for weight in range(1, 1000):
-    driver.print_weigt(weight)
+    driver.print_weight(weight)
 
 # Release resources acquired by port usage
 driver.close()
